@@ -111,6 +111,15 @@ export default function ProjectsPage() {
     });
 
     if (insertError) {
+      // Clean up orphaned storage files on failed insert
+      if (thumbnailUrl) {
+        const thumbPath = extractStoragePath(thumbnailUrl, "projects");
+        if (thumbPath) await supabase.storage.from("projects").remove([thumbPath]);
+      }
+      if (pdfUrl) {
+        const pPath = extractStoragePath(pdfUrl, "projects");
+        if (pPath) await supabase.storage.from("projects").remove([pPath]);
+      }
       setError(`Upload succeeded but database insert failed: ${insertError.message}`);
       console.error("Insert error:", insertError);
     } else {
