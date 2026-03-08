@@ -38,7 +38,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         } lg:translate-x-0`}
       >
         <div className="p-5 sm:p-6 border-b border-border">
-          <h1 className="font-heading text-lg sm:text-xl font-bold text-orbit-blue tracking-widest">
+          <h1 className="font-heading text-lg sm:text-xl font-bold text-stellar-gold tracking-widest">
             AstroSci
           </h1>
           <p className="text-[10px] sm:text-xs text-text/50 mt-1 font-mono-tech tracking-wider">
@@ -56,7 +56,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   className={`flex items-center gap-3 px-3 py-3 sm:py-2.5 rounded-lg text-sm transition-colors ${
                     isActive
-                      ? "bg-orbit-blue/15 text-orbit-blue border border-orbit-blue/25"
+                      ? "bg-stellar-gold/15 text-stellar-gold border border-stellar-gold/25"
                       : "text-text/70 hover:bg-card hover:text-text"
                   }`}
                 >

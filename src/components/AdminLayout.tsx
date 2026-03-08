@@ -36,7 +36,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <div className="w-8 h-8 border-2 border-orbit-blue border-t-transparent rounded-full animate-spin mx-auto" />
+          <div className="w-8 h-8 border-2 border-stellar-gold border-t-transparent rounded-full animate-spin mx-auto" />
           <p className="mt-4 text-sm text-text/50 font-mono-tech tracking-wider">AUTHENTICATING...</p>
         </div>
       </div>
@@ -50,7 +50,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Mobile hamburger button */}
       <button
         onClick={() => setSidebarOpen(!sidebarOpen)}
-        className="fixed top-4 left-4 z-50 lg:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-panel/90 backdrop-blur-sm border border-border text-text/70 hover:text-orbit-blue hover:border-orbit-blue/30 transition-colors"
+        className="fixed top-4 left-4 z-50 lg:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-panel/90 backdrop-blur-sm border border-border text-text/70 hover:text-stellar-gold hover:border-stellar-gold/30 transition-colors"
         aria-label="Toggle menu"
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">

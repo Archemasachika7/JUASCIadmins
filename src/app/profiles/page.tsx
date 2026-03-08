@@ -114,7 +114,7 @@ export default function ProfilesPage() {
       </div>
 
       {error && (
-        <div className="mb-4 p-3 bg-aurora-green/10 border border-aurora-green/30 rounded-lg text-aurora-green text-sm">
+        <div className="mb-4 p-3 bg-solar-flare/10 border border-solar-flare/30 rounded-lg text-solar-flare text-sm">
           {error}
           <button onClick={() => setError("")} className="ml-2 underline">Dismiss</button>
         </div>
@@ -165,7 +165,7 @@ export default function ProfilesPage() {
                         <select
                           value={profile.plan || "free"}
                           onChange={(e) => updatePlan(profile.id, e.target.value)}
-                          className="bg-card border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-orbit-blue"
+                          className="bg-card border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-stellar-gold"
                         >
                           {PLANS.map((p) => (
                             <option key={p} value={p}>{p}</option>
@@ -176,7 +176,7 @@ export default function ProfilesPage() {
                         <select
                           value={profile.role || "member"}
                           onChange={(e) => updateRole(profile.id, e.target.value)}
-                          className="bg-card border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-orbit-blue"
+                          className="bg-card border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-stellar-gold"
                         >
                           {ROLES.map((r) => (
                             <option key={r} value={r}>{r}</option>
@@ -188,14 +188,14 @@ export default function ProfilesPage() {
                           <button
                             onClick={() => deleteProfileImage(profile.id, profile.profile_image)}
                             disabled={!profile.profile_image}
-                            className="px-2 sm:px-3 py-1.5 text-[10px] sm:text-xs bg-card border border-border rounded text-text/50 hover:text-orbit-blue hover:border-orbit-blue/30 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+                            className="px-2 sm:px-3 py-1.5 text-[10px] sm:text-xs bg-card border border-border rounded text-text/50 hover:text-stellar-gold hover:border-stellar-gold/30 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
                             title="Delete profile image"
                           >
                             🗑️ <span className="hidden sm:inline">Image</span>
                           </button>
                           <button
                             onClick={() => deleteAccount(profile.id)}
-                            className="px-2 sm:px-3 py-1.5 text-[10px] sm:text-xs bg-card border border-border rounded text-text/50 hover:text-aurora-green hover:border-aurora-green/30 transition-colors"
+                            className="px-2 sm:px-3 py-1.5 text-[10px] sm:text-xs bg-card border border-border rounded text-text/50 hover:text-solar-flare hover:border-solar-flare/30 transition-colors"
                             title="Delete account"
                           >
                             ✕ <span className="hidden sm:inline">Delete</span>

@@ -30,7 +30,7 @@ export default function Header() {
   };
 
   return (
-    <header className="h-14 sm:h-16 bg-panel/80 backdrop-blur-sm border-b border-border flex items-center justify-between px-4 pl-16 sm:px-6 lg:pl-6">
+    <header className="h-14 sm:h-16 bg-panel/80 backdrop-blur-sm border-b border-border flex items-center justify-between px-4 pl-14 sm:pl-16 lg:px-6">
       <div>
         <h2 className="font-heading text-[10px] sm:text-xs font-semibold text-text/50 uppercase tracking-[0.2em]">
           Mission Control
@@ -46,7 +46,7 @@ export default function Header() {
               className="w-7 h-7 sm:w-8 sm:h-8 rounded-full object-cover border border-border"
             />
           ) : (
-            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-orbit-blue/15 flex items-center justify-center text-xs text-orbit-blue font-bold">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-stellar-gold/15 flex items-center justify-center text-xs text-stellar-gold font-bold">
               {profile?.name?.charAt(0) || "A"}
             </div>
           )}
@@ -57,7 +57,7 @@ export default function Header() {
 
         <button
           onClick={handleSignOut}
-          className="px-3 py-1.5 sm:py-1.5 text-xs bg-card border border-border rounded-md text-text/70 hover:text-aurora-green hover:border-aurora-green/30 transition-colors"
+          className="px-3 py-1.5 sm:py-1.5 text-xs bg-card border border-border rounded-md text-text/70 hover:text-solar-flare hover:border-solar-flare/30 transition-colors"
         >
           Sign Out
         </button>

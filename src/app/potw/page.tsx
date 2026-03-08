@@ -160,7 +160,7 @@ export default function POTWPage() {
       </div>
 
       {error && (
-        <div className="mb-4 p-3 bg-aurora-green/10 border border-aurora-green/30 rounded-lg text-aurora-green text-sm">
+        <div className="mb-4 p-3 bg-solar-flare/10 border border-solar-flare/30 rounded-lg text-solar-flare text-sm">
           {error}
           <button onClick={() => setError("")} className="ml-2 underline">Dismiss</button>
         </div>
@@ -176,27 +176,27 @@ export default function POTWPage() {
               accept="image/*"
               onChange={(e) => setFile(e.target.files?.[0] || null)}
               required
-              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:bg-orbit-blue file:text-background file:font-medium"
+              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:bg-stellar-gold file:text-background file:font-medium"
             />
             <input
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Title"
-              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-orbit-blue transition-colors"
+              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-stellar-gold transition-colors"
             />
             <input
               type="text"
               value={photographer}
               onChange={(e) => setPhotographer(e.target.value)}
               placeholder="Photographer"
-              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-orbit-blue transition-colors"
+              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-stellar-gold transition-colors"
             />
             <input
               type="date"
               value={weekDate}
               onChange={(e) => setWeekDate(e.target.value)}
-              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text focus:outline-none focus:border-orbit-blue transition-colors"
+              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text focus:outline-none focus:border-stellar-gold transition-colors"
             />
           </div>
           <textarea
@@ -204,12 +204,12 @@ export default function POTWPage() {
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Description"
             rows={3}
-            className="w-full bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-orbit-blue resize-none transition-colors"
+            className="w-full bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-stellar-gold resize-none transition-colors"
           />
           <button
             type="submit"
             disabled={uploading || !file}
-            className="px-5 sm:px-6 py-3 sm:py-2.5 bg-orbit-blue text-background rounded-lg text-sm font-heading font-medium tracking-wide hover:bg-orbit-blue/90 transition-colors disabled:opacity-50"
+            className="px-5 sm:px-6 py-3 sm:py-2.5 bg-stellar-gold text-background rounded-lg text-sm font-heading font-medium tracking-wide hover:bg-stellar-gold/90 transition-colors disabled:opacity-50"
           >
             {uploading ? "Uploading..." : "Add Entry"}
           </button>
@@ -243,32 +243,32 @@ export default function POTWPage() {
                         value={editTitle}
                         onChange={(e) => setEditTitle(e.target.value)}
                         placeholder="Title"
-                        className="w-full bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-orbit-blue"
+                        className="w-full bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-stellar-gold"
                       />
                       <input
                         type="text"
                         value={editPhotographer}
                         onChange={(e) => setEditPhotographer(e.target.value)}
                         placeholder="Photographer"
-                        className="w-full bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-orbit-blue"
+                        className="w-full bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-stellar-gold"
                       />
                       <textarea
                         value={editDescription}
                         onChange={(e) => setEditDescription(e.target.value)}
                         placeholder="Description"
                         rows={2}
-                        className="w-full bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-orbit-blue resize-none"
+                        className="w-full bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-stellar-gold resize-none"
                       />
                       <input
                         type="date"
                         value={editWeekDate}
                         onChange={(e) => setEditWeekDate(e.target.value)}
-                        className="w-full bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-orbit-blue"
+                        className="w-full bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-stellar-gold"
                       />
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEdit(entry.id)}
-                          className="text-xs text-aurora-green hover:underline"
+                          className="text-xs text-solar-flare hover:underline"
                         >
                           Save
                         </button>
@@ -283,7 +283,7 @@ export default function POTWPage() {
                   ) : (
                     <>
                       <h3 className="font-heading font-semibold text-text text-sm sm:text-base tracking-wide">{entry.title || "Untitled"}</h3>
-                      <p className="text-xs text-atmo-blue mt-1">{entry.photographer || "Unknown"}</p>
+                      <p className="text-xs text-nebula-violet mt-1">{entry.photographer || "Unknown"}</p>
                       <p className="text-xs text-text/50 mt-1 line-clamp-2">{entry.description || ""}</p>
                       {entry.week_date && (
                         <p className="text-xs font-mono-tech text-text/30 mt-2">{entry.week_date}</p>
@@ -294,13 +294,13 @@ export default function POTWPage() {
                     <div className="flex gap-2 mt-3">
                       <button
                         onClick={() => startEdit(entry)}
-                        className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-atmo-blue hover:border-atmo-blue/30 transition-colors"
+                        className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-nebula-violet hover:border-nebula-violet/30 transition-colors"
                       >
                         Edit
                       </button>
                       <button
                         onClick={() => handleDelete(entry)}
-                        className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-aurora-green hover:border-aurora-green/30 transition-colors"
+                        className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-solar-flare hover:border-solar-flare/30 transition-colors"
                       >
                         Delete
                       </button>

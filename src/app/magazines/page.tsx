@@ -153,7 +153,7 @@ export default function MagazinesPage() {
       </div>
 
       {error && (
-        <div className="mb-4 p-3 bg-aurora-green/10 border border-aurora-green/30 rounded-lg text-aurora-green text-sm">
+        <div className="mb-4 p-3 bg-solar-flare/10 border border-solar-flare/30 rounded-lg text-solar-flare text-sm">
           {error}
           <button onClick={() => setError("")} className="ml-2 underline">Dismiss</button>
         </div>
@@ -169,14 +169,14 @@ export default function MagazinesPage() {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Magazine Title"
-              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-orbit-blue transition-colors"
+              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-stellar-gold transition-colors"
             />
             <input
               type="text"
               value={issue}
               onChange={(e) => setIssue(e.target.value)}
               placeholder="Issue (e.g., Vol. 1, Issue 3)"
-              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-orbit-blue transition-colors"
+              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-stellar-gold transition-colors"
             />
             <div>
               <label className="block text-[10px] sm:text-xs text-text/50 mb-1.5 font-mono-tech uppercase tracking-wider">
@@ -186,7 +186,7 @@ export default function MagazinesPage() {
                 type="file"
                 accept="image/*"
                 onChange={(e) => setCoverFile(e.target.files?.[0] || null)}
-                className="w-full bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:bg-orbit-blue file:text-background file:font-medium"
+                className="w-full bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:bg-stellar-gold file:text-background file:font-medium"
               />
             </div>
             <div>
@@ -197,14 +197,14 @@ export default function MagazinesPage() {
                 type="file"
                 accept=".pdf"
                 onChange={(e) => setPdfFile(e.target.files?.[0] || null)}
-                className="w-full bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:bg-orbit-blue file:text-background file:font-medium"
+                className="w-full bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:bg-stellar-gold file:text-background file:font-medium"
               />
             </div>
           </div>
           <button
             type="submit"
             disabled={uploading}
-            className="px-5 sm:px-6 py-3 sm:py-2.5 bg-orbit-blue text-background rounded-lg text-sm font-heading font-medium tracking-wide hover:bg-orbit-blue/90 transition-colors disabled:opacity-50"
+            className="px-5 sm:px-6 py-3 sm:py-2.5 bg-stellar-gold text-background rounded-lg text-sm font-heading font-medium tracking-wide hover:bg-stellar-gold/90 transition-colors disabled:opacity-50"
           >
             {uploading ? "Uploading..." : "Upload Magazine"}
           </button>
@@ -241,7 +241,7 @@ export default function MagazinesPage() {
                     {magazine.title || "Untitled"}
                   </h3>
                   {magazine.issue && (
-                    <p className="text-xs text-atmo-blue mt-1">{magazine.issue}</p>
+                    <p className="text-xs text-nebula-violet mt-1">{magazine.issue}</p>
                   )}
                   {magazine.published_at && (
                     <p className="text-xs font-mono-tech text-text/30 mt-1">
@@ -254,14 +254,14 @@ export default function MagazinesPage() {
                         href={magazine.pdf_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-aurora-green hover:border-aurora-green/30 transition-colors"
+                        className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-solar-flare hover:border-solar-flare/30 transition-colors"
                       >
                         Download
                       </a>
                     )}
                     <button
                       onClick={() => handleDelete(magazine)}
-                      className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-aurora-green hover:border-aurora-green/30 transition-colors"
+                      className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-solar-flare hover:border-solar-flare/30 transition-colors"
                     >
                       Delete
                     </button>

@@ -13,7 +13,7 @@ export default function AccessDeniedPage() {
         className="text-center"
       >
         <div className="text-6xl mb-4">🚫</div>
-        <h1 className="font-heading text-2xl sm:text-3xl font-bold text-aurora-green mb-2 tracking-wide">
+        <h1 className="font-heading text-2xl sm:text-3xl font-bold text-solar-flare mb-2 tracking-wide">
           Access Denied
         </h1>
         <p className="text-text/50 mb-8 max-w-md text-sm sm:text-base">
@@ -22,7 +22,7 @@ export default function AccessDeniedPage() {
         </p>
         <Link
           href="/login"
-          className="inline-block px-6 py-3 sm:py-2.5 bg-orbit-blue text-background rounded-lg text-sm font-heading font-medium tracking-wide hover:bg-orbit-blue/90 transition-colors"
+          className="inline-block px-6 py-3 sm:py-2.5 bg-stellar-gold text-background rounded-lg text-sm font-heading font-medium tracking-wide hover:bg-stellar-gold/90 transition-colors"
         >
           Back to Login
         </Link>

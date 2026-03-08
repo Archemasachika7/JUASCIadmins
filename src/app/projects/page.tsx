@@ -204,7 +204,7 @@ export default function ProjectsPage() {
       </div>
 
       {error && (
-        <div className="mb-4 p-3 bg-aurora-green/10 border border-aurora-green/30 rounded-lg text-aurora-green text-sm">
+        <div className="mb-4 p-3 bg-solar-flare/10 border border-solar-flare/30 rounded-lg text-solar-flare text-sm">
           {error}
           <button onClick={() => setError("")} className="ml-2 underline">Dismiss</button>
         </div>
@@ -221,14 +221,14 @@ export default function ProjectsPage() {
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Project Title"
               required
-              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-orbit-blue transition-colors"
+              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-stellar-gold transition-colors"
             />
             <input
               type="text"
               value={author}
               onChange={(e) => setAuthor(e.target.value)}
               placeholder="Author"
-              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-orbit-blue transition-colors"
+              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-stellar-gold transition-colors"
             />
           </div>
           <textarea
@@ -236,7 +236,7 @@ export default function ProjectsPage() {
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Project Description"
             rows={3}
-            className="w-full bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-orbit-blue resize-none transition-colors"
+            className="w-full bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-stellar-gold resize-none transition-colors"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
             <div>
@@ -247,7 +247,7 @@ export default function ProjectsPage() {
                 type="file"
                 accept="image/*"
                 onChange={(e) => setThumbnailFile(e.target.files?.[0] || null)}
-                className="w-full bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:bg-orbit-blue file:text-background file:font-medium"
+                className="w-full bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:bg-stellar-gold file:text-background file:font-medium"
               />
             </div>
             <div>
@@ -258,14 +258,14 @@ export default function ProjectsPage() {
                 type="file"
                 accept=".pdf"
                 onChange={(e) => setPdfFile(e.target.files?.[0] || null)}
-                className="w-full bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:bg-orbit-blue file:text-background file:font-medium"
+                className="w-full bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:bg-stellar-gold file:text-background file:font-medium"
               />
             </div>
           </div>
           <button
             type="submit"
             disabled={uploading || !title.trim()}
-            className="px-5 sm:px-6 py-3 sm:py-2.5 bg-orbit-blue text-background rounded-lg text-sm font-heading font-medium tracking-wide hover:bg-orbit-blue/90 transition-colors disabled:opacity-50"
+            className="px-5 sm:px-6 py-3 sm:py-2.5 bg-stellar-gold text-background rounded-lg text-sm font-heading font-medium tracking-wide hover:bg-stellar-gold/90 transition-colors disabled:opacity-50"
           >
             {uploading ? "Uploading..." : "Upload Project"}
           </button>
@@ -304,13 +304,13 @@ export default function ProjectsPage() {
                         type="text"
                         value={editTitle}
                         onChange={(e) => setEditTitle(e.target.value)}
-                        className="w-full bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-orbit-blue"
+                        className="w-full bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-stellar-gold"
                         placeholder="Title"
                       />
                       <textarea
                         value={editDescription}
                         onChange={(e) => setEditDescription(e.target.value)}
-                        className="w-full bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-orbit-blue resize-none"
+                        className="w-full bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-stellar-gold resize-none"
                         placeholder="Description"
                         rows={2}
                       />
@@ -318,13 +318,13 @@ export default function ProjectsPage() {
                         type="text"
                         value={editAuthor}
                         onChange={(e) => setEditAuthor(e.target.value)}
-                        className="w-full bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-orbit-blue"
+                        className="w-full bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-stellar-gold"
                         placeholder="Author"
                       />
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEdit(project.id)}
-                          className="text-xs text-aurora-green hover:underline"
+                          className="text-xs text-solar-flare hover:underline"
                         >
                           Save
                         </button>
@@ -347,7 +347,7 @@ export default function ProjectsPage() {
                         </p>
                       )}
                       {project.author && (
-                        <p className="text-xs text-atmo-blue mt-1">{project.author}</p>
+                        <p className="text-xs text-nebula-violet mt-1">{project.author}</p>
                       )}
                       {project.created_at && (
                         <p className="text-xs font-mono-tech text-text/30 mt-1">
@@ -363,20 +363,20 @@ export default function ProjectsPage() {
                           href={project.pdf_url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-aurora-green hover:border-aurora-green/30 transition-colors"
+                          className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-solar-flare hover:border-solar-flare/30 transition-colors"
                         >
                           View PDF
                         </a>
                       )}
                       <button
                         onClick={() => startEditing(project)}
-                        className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-atmo-blue hover:border-atmo-blue/30 transition-colors"
+                        className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-nebula-violet hover:border-nebula-violet/30 transition-colors"
                       >
                         Edit
                       </button>
                       <button
                         onClick={() => handleDelete(project)}
-                        className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-aurora-green hover:border-aurora-green/30 transition-colors"
+                        className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-solar-flare hover:border-solar-flare/30 transition-colors"
                       >
                         Delete
                       </button>

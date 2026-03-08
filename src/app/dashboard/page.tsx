@@ -16,18 +16,18 @@ interface Stats {
 }
 
 const colorMap: Record<string, string> = {
-  "orbit-blue": "text-orbit-blue",
-  "atmo-blue": "text-atmo-blue",
-  "aurora-green": "text-aurora-green",
+  "stellar-gold": "text-stellar-gold",
+  "nebula-violet": "text-nebula-violet",
+  "solar-flare": "text-solar-flare",
 };
 
 const statCards = [
-  { key: "members", label: "Total Members", icon: "👤", color: "orbit-blue" },
-  { key: "gallery", label: "Gallery Images", icon: "🖼️", color: "atmo-blue" },
-  { key: "potw", label: "POTW Entries", icon: "🌟", color: "aurora-green" },
-  { key: "events", label: "Total Events", icon: "📅", color: "orbit-blue" },
-  { key: "magazines", label: "Magazines", icon: "📰", color: "atmo-blue" },
-  { key: "projects", label: "Projects", icon: "📁", color: "aurora-green" },
+  { key: "members", label: "Total Members", icon: "👤", color: "stellar-gold" },
+  { key: "gallery", label: "Gallery Images", icon: "🖼️", color: "nebula-violet" },
+  { key: "potw", label: "POTW Entries", icon: "🌟", color: "solar-flare" },
+  { key: "events", label: "Total Events", icon: "📅", color: "stellar-gold" },
+  { key: "magazines", label: "Magazines", icon: "📰", color: "nebula-violet" },
+  { key: "projects", label: "Projects", icon: "📁", color: "solar-flare" },
 ];
 
 export default function DashboardPage() {

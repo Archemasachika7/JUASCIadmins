@@ -131,7 +131,7 @@ export default function GalleryPage() {
       </div>
 
       {error && (
-        <div className="mb-4 p-3 bg-aurora-green/10 border border-aurora-green/30 rounded-lg text-aurora-green text-sm">
+        <div className="mb-4 p-3 bg-solar-flare/10 border border-solar-flare/30 rounded-lg text-solar-flare text-sm">
           {error}
           <button onClick={() => setError("")} className="ml-2 underline">Dismiss</button>
         </div>
@@ -146,19 +146,19 @@ export default function GalleryPage() {
             accept="image/*"
             onChange={(e) => setFile(e.target.files?.[0] || null)}
             required
-            className="flex-1 bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:bg-orbit-blue file:text-background file:font-medium"
+            className="flex-1 bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:bg-stellar-gold file:text-background file:font-medium"
           />
           <input
             type="text"
             value={caption}
             onChange={(e) => setCaption(e.target.value)}
             placeholder="Caption"
-            className="flex-1 bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-orbit-blue transition-colors"
+            className="flex-1 bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-stellar-gold transition-colors"
           />
           <button
             type="submit"
             disabled={uploading || !file}
-            className="px-5 sm:px-6 py-3 sm:py-2.5 bg-orbit-blue text-background rounded-lg text-sm font-heading font-medium tracking-wide hover:bg-orbit-blue/90 transition-colors disabled:opacity-50"
+            className="px-5 sm:px-6 py-3 sm:py-2.5 bg-stellar-gold text-background rounded-lg text-sm font-heading font-medium tracking-wide hover:bg-stellar-gold/90 transition-colors disabled:opacity-50"
           >
             {uploading ? "Uploading..." : "Upload"}
           </button>
@@ -191,11 +191,11 @@ export default function GalleryPage() {
                         type="text"
                         value={editCaption}
                         onChange={(e) => setEditCaption(e.target.value)}
-                        className="flex-1 bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-orbit-blue"
+                        className="flex-1 bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-stellar-gold"
                       />
                       <button
                         onClick={() => handleEditCaption(image.id)}
-                        className="text-xs text-aurora-green hover:underline"
+                        className="text-xs text-solar-flare hover:underline"
                       >
                         Save
                       </button>
@@ -215,13 +215,13 @@ export default function GalleryPage() {
                         setEditingId(image.id);
                         setEditCaption(image.caption || "");
                       }}
-                      className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-atmo-blue hover:border-atmo-blue/30 transition-colors"
+                      className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-nebula-violet hover:border-nebula-violet/30 transition-colors"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => handleDelete(image)}
-                      className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-aurora-green hover:border-aurora-green/30 transition-colors"
+                      className="px-3 py-1.5 text-xs bg-background border border-border rounded text-text/50 hover:text-solar-flare hover:border-solar-flare/30 transition-colors"
                     >
                       Delete
                     </button>

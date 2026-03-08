@@ -168,7 +168,7 @@ export default function EventsPage() {
       </div>
 
       {error && (
-        <div className="mb-4 p-3 bg-aurora-green/10 border border-aurora-green/30 rounded-lg text-aurora-green text-sm">
+        <div className="mb-4 p-3 bg-solar-flare/10 border border-solar-flare/30 rounded-lg text-solar-flare text-sm">
           {error}
           <button onClick={() => setError("")} className="ml-2 underline">Dismiss</button>
         </div>
@@ -185,26 +185,26 @@ export default function EventsPage() {
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Event Title"
               required
-              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-orbit-blue transition-colors"
+              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-stellar-gold transition-colors"
             />
             <input
               type="text"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               placeholder="Location"
-              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-orbit-blue transition-colors"
+              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-stellar-gold transition-colors"
             />
             <input
               type="datetime-local"
               value={eventDate}
               onChange={(e) => setEventDate(e.target.value)}
-              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text focus:outline-none focus:border-orbit-blue transition-colors"
+              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text focus:outline-none focus:border-stellar-gold transition-colors"
             />
             <input
               type="file"
               accept="image/*"
               onChange={(e) => setFile(e.target.files?.[0] || null)}
-              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:bg-orbit-blue file:text-background file:font-medium"
+              className="bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:bg-stellar-gold file:text-background file:font-medium"
             />
           </div>
           <textarea
@@ -212,12 +212,12 @@ export default function EventsPage() {
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Event Description"
             rows={3}
-            className="w-full bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-orbit-blue resize-none transition-colors"
+            className="w-full bg-card border border-border rounded-lg px-4 py-3 sm:py-2.5 text-sm text-text placeholder:text-text/30 focus:outline-none focus:border-stellar-gold resize-none transition-colors"
           />
           <button
             type="submit"
             disabled={uploading || !title}
-            className="px-5 sm:px-6 py-3 sm:py-2.5 bg-orbit-blue text-background rounded-lg text-sm font-heading font-medium tracking-wide hover:bg-orbit-blue/90 transition-colors disabled:opacity-50"
+            className="px-5 sm:px-6 py-3 sm:py-2.5 bg-stellar-gold text-background rounded-lg text-sm font-heading font-medium tracking-wide hover:bg-stellar-gold/90 transition-colors disabled:opacity-50"
           >
             {uploading ? "Creating..." : "Create Event"}
           </button>
@@ -273,7 +273,7 @@ export default function EventsPage() {
                             type="text"
                             value={editTitle}
                             onChange={(e) => setEditTitle(e.target.value)}
-                            className="bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-orbit-blue w-full"
+                            className="bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-stellar-gold w-full"
                           />
                         ) : (
                           <span className="text-text font-medium text-xs sm:text-sm">{event.title}</span>
@@ -285,7 +285,7 @@ export default function EventsPage() {
                             type="text"
                             value={editLocation}
                             onChange={(e) => setEditLocation(e.target.value)}
-                            className="bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-orbit-blue w-full"
+                            className="bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-stellar-gold w-full"
                           />
                         ) : (
                           <span className="text-text/70 text-xs sm:text-sm">{event.location || "—"}</span>
@@ -297,7 +297,7 @@ export default function EventsPage() {
                             type="datetime-local"
                             value={editEventDate}
                             onChange={(e) => setEditEventDate(e.target.value)}
-                            className="bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-orbit-blue"
+                            className="bg-background border border-border rounded px-2 py-1.5 text-xs text-text focus:outline-none focus:border-stellar-gold"
                           />
                         ) : (
                           <span className="text-text/70 font-mono-tech text-xs">
@@ -312,7 +312,7 @@ export default function EventsPage() {
                           <div className="flex gap-2">
                             <button
                               onClick={() => handleEdit(event.id)}
-                              className="text-xs text-aurora-green hover:underline"
+                              className="text-xs text-solar-flare hover:underline"
                             >
                               Save
                             </button>
@@ -327,13 +327,13 @@ export default function EventsPage() {
                           <div className="flex gap-2">
                             <button
                               onClick={() => startEdit(event)}
-                              className="px-3 py-1.5 text-xs bg-card border border-border rounded text-text/50 hover:text-atmo-blue hover:border-atmo-blue/30 transition-colors"
+                              className="px-3 py-1.5 text-xs bg-card border border-border rounded text-text/50 hover:text-nebula-violet hover:border-nebula-violet/30 transition-colors"
                             >
                               Edit
                             </button>
                             <button
                               onClick={() => handleDelete(event)}
-                              className="px-3 py-1.5 text-xs bg-card border border-border rounded text-text/50 hover:text-aurora-green hover:border-aurora-green/30 transition-colors"
+                              className="px-3 py-1.5 text-xs bg-card border border-border rounded text-text/50 hover:text-solar-flare hover:border-solar-flare/30 transition-colors"
                             >
                               Delete
                             </button>

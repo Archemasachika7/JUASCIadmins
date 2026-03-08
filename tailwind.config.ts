@@ -14,9 +14,9 @@ const config: Config = {
         card: "#0F1729",
         border: "#1A2540",
         text: "#E2E0DC",
-        "orbit-blue": "#C9A84C",
-        "atmo-blue": "#A78BFA",
-        "aurora-green": "#E87565",
+        "stellar-gold": "#C9A84C",
+        "nebula-violet": "#A78BFA",
+        "solar-flare": "#E87565",
       },
       fontFamily: {
         heading: ["Orbitron", "sans-serif"],
