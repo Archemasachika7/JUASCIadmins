@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import AdminLayout from "@/components/AdminLayout";
 import { SkeletonRow } from "@/components/Skeleton";
+import { extractStoragePath } from "@/lib/utils";
 import type { Profile } from "@/lib/types";
 
 const PLANS = ["free", "monthly", "annual"];
@@ -69,7 +70,7 @@ export default function ProfilesPage() {
   const deleteProfileImage = async (userId: string, imageUrl: string | null) => {
     if (!imageUrl) return;
 
-    const filePath = imageUrl.split("/profiles/")[1];
+    const filePath = extractStoragePath(imageUrl, "profiles");
     if (filePath) {
       await supabase.storage.from("profiles").remove([filePath]);
     }

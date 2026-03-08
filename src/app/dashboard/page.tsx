@@ -14,6 +14,12 @@ interface Stats {
   magazines: number;
 }
 
+const colorMap: Record<string, string> = {
+  "orbit-blue": "text-orbit-blue",
+  "atmo-blue": "text-atmo-blue",
+  "aurora-green": "text-aurora-green",
+};
+
 const statCards = [
   { key: "members", label: "Total Members", icon: "👤", color: "orbit-blue" },
   { key: "gallery", label: "Gallery Images", icon: "🖼️", color: "atmo-blue" },
@@ -69,7 +75,7 @@ export default function DashboardPage() {
               >
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-2xl">{card.icon}</span>
-                  <span className={`text-xs font-mono-tech text-${card.color}`}>
+                  <span className={`text-xs font-mono-tech ${colorMap[card.color]}`}>
                     LIVE
                   </span>
                 </div>

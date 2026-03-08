@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { supabase } from "@/lib/supabase";
 import AdminLayout from "@/components/AdminLayout";
 import { SkeletonRow } from "@/components/Skeleton";
+import { extractStoragePath, formatDate, toDatetimeLocal } from "@/lib/utils";
 import type { ClubEvent } from "@/lib/types";
 
 export default function EventsPage() {
@@ -106,8 +107,7 @@ export default function EventsPage() {
     if (!confirm("Delete this event?")) return;
 
     if (event.poster_url) {
-      const urlParts = event.poster_url.split("/events/");
-      const filePath = urlParts[urlParts.length - 1];
+      const filePath = extractStoragePath(event.poster_url, "events");
       if (filePath) {
         await supabase.storage.from("events").remove([filePath]);
       }
@@ -157,7 +157,7 @@ export default function EventsPage() {
     setEditTitle(event.title);
     setEditDescription(event.description || "");
     setEditLocation(event.location || "");
-    setEditEventDate(event.event_date ? event.event_date.split("T")[0] : "");
+    setEditEventDate(event.event_date ? toDatetimeLocal(event.event_date) : "");
   };
 
   return (
@@ -302,7 +302,7 @@ export default function EventsPage() {
                         ) : (
                           <span className="text-text/70 font-mono-tech text-xs">
                             {event.event_date
-                              ? new Date(event.event_date).toLocaleDateString()
+                              ? formatDate(event.event_date)
                               : "—"}
                           </span>
                         )}

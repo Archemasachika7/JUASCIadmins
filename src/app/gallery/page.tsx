@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { supabase } from "@/lib/supabase";
 import AdminLayout from "@/components/AdminLayout";
 import { SkeletonImage } from "@/components/Skeleton";
+import { extractStoragePath } from "@/lib/utils";
 import type { GalleryImage } from "@/lib/types";
 
 export default function GalleryPage() {
@@ -86,8 +87,7 @@ export default function GalleryPage() {
     if (!confirm("Delete this image?")) return;
 
     // Extract file path from URL
-    const urlParts = image.image_url.split("/gallery/");
-    const filePath = urlParts[urlParts.length - 1];
+    const filePath = extractStoragePath(image.image_url, "gallery");
     if (filePath) {
       await supabase.storage.from("gallery").remove([filePath]);
     }

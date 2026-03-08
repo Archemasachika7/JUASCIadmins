@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { supabase } from "@/lib/supabase";
 import AdminLayout from "@/components/AdminLayout";
 import { SkeletonImage } from "@/components/Skeleton";
+import { extractStoragePath } from "@/lib/utils";
 import type { Magazine } from "@/lib/types";
 
 export default function MagazinesPage() {
@@ -118,16 +119,14 @@ export default function MagazinesPage() {
 
     // Clean up storage files
     if (magazine.cover_image) {
-      const coverParts = magazine.cover_image.split("/magazines/");
-      const coverPath = coverParts[coverParts.length - 1];
+      const coverPath = extractStoragePath(magazine.cover_image, "magazines");
       if (coverPath) {
         await supabase.storage.from("magazines").remove([coverPath]);
       }
     }
 
     if (magazine.pdf_url) {
-      const pdfParts = magazine.pdf_url.split("/magazines/");
-      const pdfPath = pdfParts[pdfParts.length - 1];
+      const pdfPath = extractStoragePath(magazine.pdf_url, "magazines");
       if (pdfPath) {
         await supabase.storage.from("magazines").remove([pdfPath]);
       }

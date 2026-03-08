@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { supabase } from "@/lib/supabase";
 import AdminLayout from "@/components/AdminLayout";
 import { SkeletonImage } from "@/components/Skeleton";
+import { extractStoragePath } from "@/lib/utils";
 import type { POTW } from "@/lib/types";
 
 export default function POTWPage() {
@@ -99,8 +100,7 @@ export default function POTWPage() {
   const handleDelete = async (entry: POTW) => {
     if (!confirm("Delete this POTW entry?")) return;
 
-    const urlParts = entry.image_url.split("/potw/");
-    const filePath = urlParts[urlParts.length - 1];
+    const filePath = extractStoragePath(entry.image_url, "potw");
     if (filePath) {
       await supabase.storage.from("potw").remove([filePath]);
     }
